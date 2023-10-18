@@ -138,9 +138,6 @@ app.get("/today", (req,res) => {
 });
 
 app.get("/work" , (req,res) => {
-
-     // const isWorkPage = true;
-    
      Task2.find().then(function(tasks2){
         today = "Work List";
         if(tasks2.length === 0){

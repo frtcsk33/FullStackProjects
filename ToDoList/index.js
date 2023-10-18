@@ -50,30 +50,9 @@ const task3 = new Task({
 
 const defaultTasks = [task1, task2, task3];
 const defaultTasks2 = [task4, task5, task6];
-// Task.insertMany(defaultTasks)
-//     .then(function() {
-
-//         console.log("Successfully saved default items to DB");
-//     })
-//     .catch(function(err){
-
-//         console.log(err);
-//     });
 
 
-//await Task.find({});
-
-
-// const task2 = ["repair a broken thing", "Do workout","Watch a movie", "make a to do list"];
-// const  task = ["buy socks", "practise with nodejs", "Watch a movie", "make a to do list"];
 app.get("/",  (req, res) => {
-    //  const today = new Date();
-  
-    //  const options = { weekday: 'long', month: 'long', day: 'numeric' };
-     //const formattedDate = "Today";
-
-   
-
     Task.find().then(function(tasks){
         
         if(tasks.length === 0){
@@ -90,29 +69,19 @@ app.get("/",  (req, res) => {
              res.render("index.ejs", { task: tasks, complete: complete, formattedDate: "Today" });
         }
 
-
-        
     })
     .catch(function(err){
         console.log(err);
     });
 
-     //const foundItems = await Task.findById({});
-    // if(!(await Task.exists())){
-        
-    // }
 
-
-   
 });
 
 
 
 app.post("/addtask", (req,res) => {
 
-    // var newTask = req.body.newtask;
-    // task.push(newTask);
-    // res.redirect("/");
+
 
     const taskName= req.body.newtask;
 
@@ -200,12 +169,6 @@ app.get("/work" , (req,res) => {
 
 app.post("/addtask2", (req,res) => {
     
-    // var newTask2 = req.body.newtask2;
-
-    // task2.push(newTask2);
-
-    // res.redirect("/work");
-
     const taskName2= req.body.newtask2;
 
     const task2 = new Task2({

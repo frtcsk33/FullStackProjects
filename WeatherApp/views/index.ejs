@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>CheckWeather</title>
+     <script src="https://kit.fontawesome.com/356bbb801f.js" crossorigin="anonymous"></script>
+</head>
+<body> 
+     <h1 class="forecast" >WEATHER FORECAST</h1>
+    
+        <div class="container">
+       
+            <div class="con">
+            <form id="Form" action="/" method="post">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="id" placeholder=" Enter a City Name">
+            <button type="submit">Search</button>
+            
+            </div>
+            </form>
+       
+   
+        <% if(locals.data) { %>
+            <h4 style="color:white; padding: 20px;"><%= day %></h4>
+           
+            <div class="card">
+            
+             <div>
+                <h2 style="color:white;"> <%= data.location.name %>, <%=data.location.country  %></h2>
+                 <h1><svg class="weather-icon" data-src="/images/weathericons/1.svg" viewBox="0 0 288 288" width="88" height="88" style="margin-top: 20px;"><g stroke="#FF8700" stroke-width="9.6" fill="none" fill-rule="evenodd"><path d="M144 0v48M144 240v48M0 144h48M211.872 76.128l33.936-33.936M245.808 245.808l-33.936-33.936M76.128 76.128 42.192 42.192"></path><circle cx="144" cy="144" r="76.8"></circle><path d="m76.128 211.872-33.936 33.936M240 144h48"></path> </g> </svg></h1>    
+                <h1> <%=data.current.temperature  %>℃</h1> 
+                <h2><%= data.current.weather_descriptions  %></h2>
+             </div>      
+            
+            <h3> Feels like: <%= data.current.feelslike %> ℃<br><br> Humidity: <%=data.current.humidity  %>%<br><br>Wind: <%=data.current.wind_dir%> <%=data.current.wind_speed%> km/h </h3>
+             <h3> Visibility: <%=data.current.visibility  %> km <br><br>Pressure: <%= data.current.pressure %> mb</h3>
+            </div>
+           
+          
+            
+        <% } %>  
+         </div> 
+         
+       
+    
+    <!-- <form id="Form" action="/weather" method="get"></form>
+        <div class="container"> </div> -->
+
+   
+
+
+
+</body>
+</html>

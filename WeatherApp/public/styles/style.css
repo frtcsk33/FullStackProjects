@@ -1,0 +1,94 @@
+
+*{
+
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Space Grotesk,Arial,sans-serif; 
+    
+}
+body{
+    background: url("../images/sky.jpg");
+}
+
+
+.forecast{
+
+    margin-bottom: 100px;
+    text-align: center;
+    margin-top: 90px;
+    color: white;
+
+}
+
+input, button{
+    font-size: 1.1rem;
+}
+
+
+
+.container{
+    
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+
+
+button:hover{
+    background-color: #609966;
+}
+
+form{
+    background: #c7c7db;  
+    width: 600px;
+    height: 55px;
+    display: flex;
+
+}
+
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+}
+
+
+form button{
+     background: green; 
+    padding: 10px 50px;
+    border: none;
+    
+    outline: none;
+     color: #fff; 
+    letter-spacing: 1px;
+    cursor:pointer;
+}
+
+form .fa-solid{
+    align-self: center;
+    padding: 10px 20px;
+    color: #777; 
+
+}
+
+.card{
+    
+    display: grid;
+   grid-template-columns:1fr 1fr 1fr;
+
+   column-gap:35px;
+  
+    color:#fff;
+    justify-content: center;
+    align-items: center; 
+}
